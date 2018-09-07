@@ -1,0 +1,28 @@
+budl gradle.
+pridat gadle boot plugin, to musi byt uvnitr buildscirpt? v nem dependency na spring boot? uvedena repsository uvnitr builscirt?
+ve srig in action je
+
+
+buildscript {
+repositories {
+mavenLocal()
+}
+dependencies {
+classpath("org.springframework.boot:spring-boot-gradle-plugin:
+1.1.4.RELEASE")
+}
+}
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+jar {
+baseName = 'contacts'
+version =  '0.1.0'
+}
+repositories {
+mavenCentral()
+}
+dependencies {
+}
+task wrapper(type: Wrapper) {
+gradleVersion = '1.8'
+}
